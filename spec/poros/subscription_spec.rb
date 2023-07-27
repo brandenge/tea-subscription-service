@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Subscription, type: :poro do
   subject(:subscription) do
-    @customer = FactoryBot.create(:customer)
-    @tea = FactoryBot.create(:tea)
+    @customer = create(:customer)
+    @tea = create(:tea)
 
     attributes = {
       id: 123,
