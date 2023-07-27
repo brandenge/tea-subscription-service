@@ -10,6 +10,7 @@ RSpec.describe 'Subscriptions Index', type: :request do
 
     subscriptions = JSON.parse(response.body, symbolize_names: true)
 
+    expect(subscriptions).to be_a(Hash)
     expect(subscriptions).to have_key(:data)
     expect(subscriptions[:data]).to be_an(Array)
     expect(subscriptions[:data].length).to eq(5)
