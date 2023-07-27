@@ -20,7 +20,7 @@ RSpec.describe 'Cancel Subscription', type: :request do
     it 'returns the updated subscription' do
       subscription = create(:subscription, status: 'Active')
       patch api_v0_subscription_path(subscription)
-      
+
       expect(response).to be_successful
       expect(response.status).to eq(200)
 
@@ -51,6 +51,8 @@ RSpec.describe 'Cancel Subscription', type: :request do
       expect(subscription[:data][:attributes][:price]).to be_a(Integer)
       expect(subscription[:data][:attributes][:status]).to eq('Cancelled')
       expect(subscription[:data][:attributes][:frequency]).to be_a(Integer)
+      expect(subscription[:data][:attributes][:created_at]).to be_a(String)
+      expect(subscription[:data][:attributes][:updated_at]).to be_a(String)
     end
   end
 end

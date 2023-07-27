@@ -61,6 +61,8 @@ RSpec.describe 'Create Subscription', type: :request do
       expect(subscription[:data][:attributes][:price]).to be_a(Integer)
       expect(subscription[:data][:attributes][:status]).to be_in(['Active', 'Cancelled'])
       expect(subscription[:data][:attributes][:frequency]).to be_a(Integer)
+      expect(subscription[:data][:attributes][:created_at]).to be_a(String)
+      expect(subscription[:data][:attributes][:updated_at]).to be_a(String)
     end
   end
 end

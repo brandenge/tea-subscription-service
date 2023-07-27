@@ -38,6 +38,8 @@ RSpec.describe 'Subscriptions Index', type: :request do
       expect(subscription[:attributes][:price]).to be_a(Integer)
       expect(subscription[:attributes][:status]).to be_in(['Active', 'Cancelled'])
       expect(subscription[:attributes][:frequency]).to be_a(Integer)
+      expect(subscription[:attributes][:created_at]).to be_a(String)
+      expect(subscription[:attributes][:updated_at]).to be_a(String)
     end
   end
 end
