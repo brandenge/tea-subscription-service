@@ -6,10 +6,21 @@ class Api::V0::SubscriptionController < ApplicationController
   end
 
   def create
-
+    subscription = Subscription.create(subscription_params)
+    render json: SubscriptionSerializer.new(subscription).serializable_hash.to_json, status: 200
   end
 
   def destroy
-    
+
+  end
+
+  private
+
+  def record_not_found
+    render json: { errors: "Not found" }, status: 404
+  end
+
+  def subscription_params
+    params.permit(:customer_id, :tea_id, :title, :price, :status, :frequency)
   end
 end
