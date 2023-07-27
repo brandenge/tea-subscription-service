@@ -10,8 +10,10 @@ class Api::V0::SubscriptionController < ApplicationController
     render json: SubscriptionSerializer.new(subscription).serializable_hash.to_json, status: 200
   end
 
-  def destroy
-
+  def update
+    subscription = Subscription.find(params[:id])
+    subscription.update({status: 'Cancelled'})
+    render json: SubscriptionSerializer.new(subscription).serializable_hash.to_json, status: 200
   end
 
   private
