@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root to: 'application#welcome'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  namespace :api do
+    namespace :v0 do
+      get '/subscriptions', to: 'subscriptions#index'
+      post '/subscriptions', to: 'subscirptions#create'
+      delete '/subscriptions/:id', to: 'subscirptions#destroy'
+    end
+  end
 end
