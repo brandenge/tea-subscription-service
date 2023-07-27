@@ -6,7 +6,7 @@ class CreateSubscription < ActiveRecord::Migration[7.0]
 
       t.string :title, null: false
       t.integer :price, null: false
-      t.integer :status, null: false
+      t.integer :status, null: false, default: 0
       t.integer :frequency, null: false
 
       t.timestamps
