@@ -18,7 +18,7 @@ FactoryBot.define do
     association :tea
     title { Faker::Tea.variety }
     price { Faker::Number.between(from: 500, to: 5000) }
-    status { ['Pending', 'Active', 'Expired'].sample }
+    status { ['Active', 'Cancelled'].sample }
     frequency { Faker::Number.between(from: 1, to: 30) }
   end
 end

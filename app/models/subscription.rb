@@ -7,5 +7,5 @@ class Subscription < ApplicationRecord
   validates :status, presence: true
   validates :frequency, presence: true, numericality: true
 
-  enum status: ['Pending', 'Active', 'Expired']
+  enum status: ['Active', 'Cancelled']
 end
