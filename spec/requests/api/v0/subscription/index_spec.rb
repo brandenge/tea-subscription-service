@@ -19,7 +19,7 @@ RSpec.describe 'Subscriptions Index', type: :request do
       expect(subscription).to have_key(:type)
       expect(subscription).to have_key(:attributes)
 
-      expect(subscription[:id]).to be_a(Integer)
+      expect(subscription[:id]).to be_a(String)
       expect(subscription[:type]).to eq('subscription')
 
       expect(subscription[:attributes]).to be_a(Hash)

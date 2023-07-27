@@ -1,9 +1,11 @@
 class SubscriptionSerializer
-  include JSONAPI::SubscriptionSerializer
+  include JSONAPI::Serializer
 
   set_type :subscription
 
-  attributes :title,
+  attributes :customer_id,
+             :tea_id,
+             :title,
              :price,
              :status,
              :frequency
