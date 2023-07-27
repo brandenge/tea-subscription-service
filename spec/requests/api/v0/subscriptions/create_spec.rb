@@ -13,7 +13,7 @@ RSpec.describe 'Create Subscription', type: :request do
       })
 
       subscription = Subscription.last
-      expect(subscription.size).to eq(1)
+      expect(Subscription.count).to eq(1)
       expect(subscription.customer_id).to eq(123)
       expect(subscription.tea_id).to eq(456)
       expect(subscription.title).to eq('Tea Subscription Title')
