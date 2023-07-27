@@ -63,6 +63,25 @@ RSpec.describe 'Create Subscription', type: :request do
       expect(subscription[:data][:attributes][:frequency]).to be_a(Integer)
       expect(subscription[:data][:attributes][:created_at]).to be_a(String)
       expect(subscription[:data][:attributes][:updated_at]).to be_a(String)
+
+      expect(subscription[:data]).to have_key(:relationships)
+      expect(subscription[:data][:relationships]).to be_a(Hash)
+      expect(subscription[:data][:relationships]).to have_key(:customer)
+      expect(subscription[:data][:relationships]).to have_key(:tea)
+      expect(subscription[:data][:relationships][:customer]).to be_a(Hash)
+      expect(subscription[:data][:relationships][:tea]).to be_a(Hash)
+      expect(subscription[:data][:relationships][:customer]).to have_key(:data)
+      expect(subscription[:data][:relationships][:customer][:data]).to be_a(Hash)
+      expect(subscription[:data][:relationships][:tea]).to have_key(:data)
+      expect(subscription[:data][:relationships][:tea][:data]).to be_a(Hash)
+      expect(subscription[:data][:relationships][:customer][:data]).to have_key(:id)
+      expect(subscription[:data][:relationships][:customer][:data]).to have_key(:type)
+      expect(subscription[:data][:relationships][:tea][:data]).to have_key(:id)
+      expect(subscription[:data][:relationships][:tea][:data]).to have_key(:type)
+      expect(subscription[:data][:relationships][:customer][:data][:id]).to be_a(String)
+      expect(subscription[:data][:relationships][:customer][:data][:type]).to be_a(String)
+      expect(subscription[:data][:relationships][:tea][:data][:id]).to be_a(String)
+      expect(subscription[:data][:relationships][:tea][:data][:type]).to be_a(String)
     end
   end
 end
