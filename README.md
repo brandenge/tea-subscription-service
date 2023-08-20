@@ -89,9 +89,9 @@ Run all commands from the application's root directory.
 
 ## Endpoints
 
-API documentation is done using Swagger and the Open API Specification. Responses are in JSON, following the JSON API specification.
+API documentation is done using [Swagger](https://swagger.io/), following the [OpenAPI Specification](https://github.com/OAI/OpenAPI-Specification) from the [OpenAPI Initiative](https://www.openapis.org/). Responses are in JSON, following the [JSON API Specification](https://jsonapi.org/).
 
-[Swagger API Documentation](https://app.swaggerhub.com/apis-docs/brandenge/tea-subscription-service/1.0.0)
+[API Documentation](https://app.swaggerhub.com/apis-docs/brandenge/tea-subscription-service/1.0.0)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
